@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    User u;
+    User u = new User();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,16 +20,18 @@ public class MainActivity extends AppCompatActivity {
 
         Intent rec = getIntent();
         int value = rec.getIntExtra("id",0);
-        u = ListActivity.userList.get(value);
-//        u.name = "MAD";
-//        u.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-//        u.id = 1;
-//        u.followed = false;
+        //for(int i = 0; i < ListActivity.userList.size(); i++){
+        //    u = ListActivity.userList.get(i);
+        //}
+        u.setName("MAD");
+        u.setDesc("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua");
+        u.setID(1);
+        u.setFollowed(false);
 
         TextView name = findViewById(R.id.txtName);
-        name.setText(u.name);
+        name.setText(u.getName());
         TextView description = findViewById(R.id.txtDescription);
-        description.setText(u.description);
+        description.setText(u.getDesc());
         setFollowBtn();
     }
 
