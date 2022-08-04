@@ -20,13 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent rec = getIntent();
         int value = rec.getIntExtra("id",0);
-        //for(int i = 0; i < ListActivity.userList.size(); i++){
-        //    u = ListActivity.userList.get(i);
-        //}
-        u.setName("MAD");
-        u.setDesc("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua");
-        u.setID(1);
-        u.setFollowed(false);
+        u = ListActivity.userList.get(value);
 
         TextView name = findViewById(R.id.txtName);
         name.setText(u.getName());
